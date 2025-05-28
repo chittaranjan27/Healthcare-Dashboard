@@ -1,0 +1,9 @@
+/* src/components/ui/button.css */
+.my-default-button {
+  padding: 8px 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

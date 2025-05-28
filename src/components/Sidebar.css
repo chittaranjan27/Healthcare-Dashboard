@@ -1,0 +1,192 @@
+/* Sidebar container */
+.sidebar {
+  background-color: white;
+  border-right: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar.expanded {
+  width: 16rem; /* 64 */
+}
+
+.sidebar.collapsed {
+  width: 4rem; /* 16 */
+}
+
+/* Header */
+.sidebar-header {
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #06b6d4; /* cyan-500 */
+  margin: 0;
+}
+
+/* Button styles override */
+.toggle-btn {
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-btn:hover {
+  background-color: #f3f4f6; /* gray-100 */
+  border-radius: 0.375rem;
+}
+
+/* Navigation */
+.sidebar-nav {
+  flex-grow: 1;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  overflow-y: auto;
+}
+
+.section-label {
+  font-size: 0.625rem; /* text-xs */
+  color: #9ca3af; /* gray-400 */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+}
+
+/* Navigation List */
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Navigation Item */
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.75rem; /* rounded-xl */
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-item.inactive {
+  color: #4b5563; /* gray-600 */
+}
+
+.nav-item.inactive:hover {
+  background-color: #f9fafb; /* gray-50 */
+  color: #111827; /* gray-900 */
+}
+
+.nav-item.active {
+  background-color: #eff6ff; /* blue-50 */
+  color: #2563eb; /* blue-600 */
+}
+
+/* Icons */
+.nav-icon {
+  flex-shrink: 0;
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+  transition: color 0.2s ease;
+}
+
+.icon-active {
+  color: #2563eb; /* blue-600 */
+}
+
+.icon-inactive {
+  color: #6b7280; /* gray-500 */
+}
+
+.nav-item.inactive:hover .nav-icon {
+  color: #374151; /* gray-700 */
+}
+
+/* Label */
+.nav-label {
+  margin-left: 0.75rem;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+}
+
+/* Badge */
+.badge {
+  margin-left: auto;
+  background-color: #ef4444; /* red-500 */
+  color: white;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.125rem 0.5rem;
+  min-width: 1.25rem;
+  text-align: center;
+  user-select: none;
+}
+
+/* Tooltip for collapsed state */
+.collapsed-item {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  left: 100%;
+  margin-left: 0.5rem;
+  background-color: #111827; /* gray-900 */
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+}
+
+.collapsed-item:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.badge-tooltip {
+  margin-left: 0.25rem;
+  background-color: #ef4444;
+  padding: 0 0.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+/* Active indicator bar on right */
+.active-indicator {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.25rem; /* 1 */
+  height: 1.5rem; /* 6 */
+  background-color: #2563eb; /* blue-600 */
+  border-radius: 0 0.375rem 0.375rem 0;
+}
